@@ -1,0 +1,1 @@
+<?php foreach (glob(get_template_directory() . '/inc/*.php') as $filename) { require $filename; }

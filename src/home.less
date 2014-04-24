@@ -1,0 +1,22 @@
+.home-menu {
+	padding: 1em 0;
+	font-family: @font-family-sans-serif;
+	transition: all 1s;
+	
+	.menu-item.active {
+		border-bottom: 2px solid @component-active-bg;
+	}
+	a:before {
+		font-family: 'FontAwesome';
+		margin-right: .25em;
+	}
+	a[href='#latest']:before { content: '\f017'; }
+	a[href='#hot']:before { content: '\f06d'; }
+	a[href='#featured']:before { content: '\f005'; }
+	a[href='#forum']:before { content: '\f086'; }
+	a[href='#blog']:before { content: '\f09e'; }
+	a[href='#magazine']:before { content: '\f02d'; }
+}
+.home-content {
+	padding: 1em 0;
+}
