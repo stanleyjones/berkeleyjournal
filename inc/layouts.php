@@ -7,6 +7,9 @@
 function main_template_path() {
 	return Layout_Engine::$main_template;
 }
+function main_template_base() {
+	echo Layout_Engine::$base;
+}
 
 class Layout_Engine {
 	static $main_template;

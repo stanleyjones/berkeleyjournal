@@ -10,11 +10,11 @@ function register_custom_menus() {
 		'footer' => 'Footer Menu'
 	));
 }
-add_action( 'init','register_custom_menus' );
+add_action('init','register_custom_menus');
 
-function register_custom_sidebar() {
+function register_custom_sidebars() {
 	register_sidebar(array(
-		// 'sidebar_slug' => 'Sidebar Name'
+		'single' => 'Article Sidebar'
 	));
 }
-add_action( 'init','register_custom_sidebar' );
+add_action('init','register_custom_sidebars');

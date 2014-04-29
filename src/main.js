@@ -14,4 +14,10 @@
 		// $('body').css({background: '#ffe'});
 	}
 
+	// Single Pages
+
+	$('.single .site-logo').click(function (ev) {
+		$('#sidebar').toggleClass('on-canvas');
+	});
+
 }(jQuery));

@@ -1,10 +1,10 @@
 <?php setup_postdata($post); ?>
 <article class="post post-featured row">
-	<div class="col-md-2 col-md-offset-1"><img class="post-thumbnail" src="<?php the_post_thumbnail(); ?>"></div>
+	<div class="col-md-3"><img class="post-thumbnail" src="<?php the_post_thumbnail(); ?>"></div>
 	<div class="col-md-7">
-		<h1 class="post-title"><?php the_title(); ?></h1>
+		<h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 		<p class="post-deck"><?php the_excerpt(); ?></p>
-		<footer class="post-meta"><?php the_author(); ?> &bull; <?php the_time('F j, Y'); ?> &bull; <?php the_category(' '); ?></footer>
+		<footer class="post-meta"><?php the_byline(); ?></footer>
 	</div>
 	<div class="col-md-2">
 		<i class="fa fa-comment"></i> <?php comments_number('0', '1', '%'); ?> comments<br>

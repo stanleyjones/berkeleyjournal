@@ -26,3 +26,7 @@ function get_page_content($slug) {
 	if ($page) { return apply_filters('the_content', $page[0]->post_content); }
 }
 function the_page_content($slug) { echo get_page_content($slug); }
+
+function google_fonts($fonts) {
+	echo '<link href="http://fonts.googleapis.com/css?family=' . $fonts . ' rel="stylesheet">';
+}
