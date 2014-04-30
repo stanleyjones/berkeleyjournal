@@ -13,13 +13,19 @@
 		font-family: 'FontAwesome';
 		margin-right: .25em;
 	}
-	a[href='#latest']:before { content: '\f017'; }
-	a[href='#hot']:before { content: '\f06d'; }
-	a[href='#featured']:before { content: '\f005'; }
-	a[href='#forum']:before { content: '\f086'; }
-	a[href='#blog']:before { content: '\f09e'; }
-	a[href='#magazine']:before { content: '\f02d'; }
+	a[title='latest']:before { content: '\f017'; }
+	a[title='hot']:before { content: '\f06d'; }
+	a[title='featured']:before { content: '\f005'; }
+	a[title='forum']:before { content: '\f086'; }
+	a[title='blog']:before { content: '\f09e'; }
+	a[title='magazine']:before { content: '\f02d'; }
 }
 .home-content {
 	padding: 1em 0;
+	.tax-label { display: none; }
+	.tax-name { margin-top: 0; }
+}
+#latest .post-featured:last-child {
+	background: #f00;
+	border-bottom: 1px solid @gray-lighter;
 }

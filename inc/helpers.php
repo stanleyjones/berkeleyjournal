@@ -11,7 +11,7 @@ function get_site_logo($filename = 'logo.png') {
 }
 function the_site_logo() { echo get_site_logo(); }
 
-function the_site_menu($menu_slug = '', $args = null) {
+function the_site_menu($menu_slug = '', $args = array()) {
 	return wp_nav_menu(array_merge($args, array('theme_location' => $menu_slug, 'depth' => 1, 'container' => '')));
 }
 function the_tabbed_menu($menu_slug = '') {

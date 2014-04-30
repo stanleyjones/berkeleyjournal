@@ -3,16 +3,52 @@
 	z-index: 99;
 	top: 0;
 	left: 0;
-	height: 100%;
+	min-height: 100%;
+	width: 320px;
+	max-width: 100%;
 	padding-top: 5em;
+	overflow-y: scroll;
 
 	color: white;
-	background: @gray-dark;
+	background: @gray-darker;
 
-	-webkit-transform: translate(-100%, 0);
-	transition: all .5s;
+	.translate(-100%; 0);
+	.transition(all .25s);
+	&.on-canvas { .translate(0; 0); }
 
-	&.on-canvas {
-		-webkit-transform: translate(0, 0);
+	ul { padding-left: 0; }
+	li { list-style: none; }
+	hr { border: 0; border-top: 1px solid @gray; }
+
+	.home-menu, .static-menu {
+		padding: 0;
+		a {
+			font-family: @font-family-sans-serif;
+			&:hover, &:focus {
+				color: white;
+				text-decoration: none;
+			}
+			&:before {
+				display: inline-block;
+				width: 1.5em;
+			}
+		}
 	}
+	.static-menu a { color: @gray-light; }
+
+	.post-link {
+		margin: 0 0 .5em;
+		.post-meta, .post-meta a {
+			color: @gray;
+			font-family: @font-family-sans-serif;
+			font-size: @font-size-small;
+		}
+	}
+	.tax-name {
+		color: white;
+	}
+	.tax-description {
+		font-family: @font-family-sans-serif;
+	}
+
 }

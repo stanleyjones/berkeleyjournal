@@ -1,8 +1,7 @@
 <?php global $tax; ?>
 <section class="row">
 	<div class="col-md-3">
-		<h3 class="tax-name"><?php echo $tax->name; ?></h3>
-		<p class="tax-description"><?php echo $tax->description; ?></p>
+		<?php get_template_part('tpl/tax-category'); ?>
 	</div>
 	<div class="col-md-9">
 <?php

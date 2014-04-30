@@ -1,7 +1,12 @@
 #single { // Matches body#single
 	.site-header {
 		.site-title, .site-tagline { display: none; }
-		.site-logo { max-width: 3em; }
+		.site-logo {
+			// position: fixed;
+			max-width: 3em;
+			// background: rgba(255,255,255,0.25);
+			// border-radius: 50%;
+		}
 	}
 	.post {
 		.single-byline {
@@ -10,8 +15,22 @@
 		.single-lead {
 			font-size: @font-size-large;
 		}
+		.single-banner {
+			margin: .5em auto 1em;
+			height: 0;
+			padding-bottom: 56.25%;
+			// min-height: 24em;
+			background: @gray-lighter center no-repeat;
+			background-size: contain;
+		}
 		.single-content {
+			padding-bottom: 5em;
 			line-height: 1.5;
-		}		
+
+			blockquote {
+				.make-md-column-offset(-3);
+				.make-md-column(8);
+			}
+		}
 	}
 }

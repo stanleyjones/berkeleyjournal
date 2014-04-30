@@ -3,9 +3,11 @@
 	border-bottom: 1px solid @gray-lighter;
 	.site-logo {
 		position: relative;
+		left: 10px;
 		max-width: 100%;
 		text-align: center;
 		z-index: 100;
+		cursor: pointer;
 	}
 	.site-navigation {
 		width: 100%;
@@ -26,5 +28,13 @@
 
 .site-footer {
 	padding: 1em 0;
+	color: @gray-light;
 	border-top: 1px solid @gray-lighter;
+	.static-menu {
+		font-family: @font-family-sans-serif;
+	}
+	.site-copyright {
+		color: @gray;
+		font-family: @font-family-sans-serif;
+	}
 }
