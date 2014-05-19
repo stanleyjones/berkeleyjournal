@@ -14,6 +14,8 @@
 ?>
 	</div>
 	<div class="col-md-9">
-		<?php while (have_posts()) { the_post(); get_template_part('tpl/post'); } ?>
+		<?php while (have_posts()) : the_post(); ?>
+			<div class="col-md-4"><?php get_template_part('tpl/post'); ?></div>
+		<?php endwhile; ?>
 	</div>
 </section>

@@ -16,9 +16,10 @@ module.exports = function(grunt) {
 					beautify: false
 				},
 				files: {
+					'dist/jquery.js': ['bower_components/jquery/dist/jquery.js'],
 					'dist/main.js': [
-						'bower_components/jquery/dist/jquery.js',
 						'bower_components/bootstrap/dist/js/bootstrap.js',
+						'src/lib/inlineDisqussions.js',
 						'src/main.js'
 					]
 				}
@@ -31,7 +32,7 @@ module.exports = function(grunt) {
 				},
 				files: {
 					'dist/main.css': [
-						// 'css/ss-symbolicons-block.css',
+						'src/lib/inlineDisqussions.css',
 						'src/main.less'
 					]
 				}

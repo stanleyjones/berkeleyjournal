@@ -1,14 +1,51 @@
-.home-menu {
-	padding: 1em 0;
-	font-family: @font-family-sans-serif;
-	transition: all 1s;
+#front-page {
+	#wrap {
+		padding-top: 14em;
+	}
+	.home-menu {
+		margin: 1em -10px 0;
+		padding: 1em 0;
+		font-family: @font-family-sans-serif;
+		background: white;
+		z-index: @zindex-navbar;
+		text-align: center;
+		transition: all .25s;
 	
-	.menu-item.active {
-		border-bottom: 2px solid @component-active-bg;
+		.menu-item {
+			display: inline-block;
+			float: none;
+			height: 2em;
+			a {
+				color: fade(@brand-secondary, 50%);
+				font-size: 0;
+				&:before { font-size: @font-size-base; }
+				&:hover { color: @brand-secondary; background: transparent; }
+			}
+			&.active a {
+				color: @brand-secondary !important;
+				background: transparent;
+			}
+		}
 	}
-	a {
-		color: @brand-secondary;
+	&.min .home-menu {
+		border-top: 1px solid @gray-lighter;
+		padding: .5em 0;
 	}
+	.home-content {
+		padding: 0;
+		.tax-label { display: none; }
+		.tax-name { margin-top: 0; }
+		.featured {
+			padding-top: 2em;
+			border-bottom: 2px solid white;
+		}
+		.tab-pane > section {
+			padding-top: 2em;
+			padding-bottom: 2em;
+		}
+	}
+}
+.home-menu {
 	a:before {
 		font-family: 'FontAwesome';
 		margin-right: .25em;
@@ -20,12 +57,44 @@
 	a[title='blog']:before { content: '\f09e'; }
 	a[title='magazine']:before { content: '\f02d'; }
 }
-.home-content {
-	padding: 1em 0;
-	.tax-label { display: none; }
-	.tax-name { margin-top: 0; }
+
+#wrap { transition: background .25s; }
+#wrap.latest	{ background: fade(@brand-primary, 15%); }
+#wrap.forum 	{ background: fade(@brand-info, 25%); }
+#wrap.blog 		{ background: fade(@brand-success, 25%); }
+#wrap.magazine 	{ background: fade(@brand-warning, 25%); }
+
+@media screen and (min-width: @screen-xs-min) {
+	#front-page {
+		.home-menu {
+			.menu-item {
+				display: inline-block;
+				a { font-size: @font-size-base; }
+			}
+		}
+		&.min .home-menu {
+			.menu-item {
+				a { font-size: @font-size-small; }
+			}
+		}
+	}
 }
-#latest .post-featured:last-child {
-	background: #f00;
-	border-bottom: 1px solid @gray-lighter;
+@media screen and (min-width: @screen-sm-min) {
+	#front-page {
+		.post {
+			.post-title {
+				margin-top: 0;
+			}
+		}
+	}
+}
+@media screen and (min-width: @screen-md-min) {
+	#front-page {
+		.home-content {
+			.featured {
+				border-bottom: none;
+				border-right: 2px solid white;
+			}
+		}
+	}
 }

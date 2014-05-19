@@ -1,18 +1,29 @@
 .site-header {
-	padding: 1em 0;
-	border-bottom: 1px solid @gray-lighter;
-	.site-logo {
-		position: relative;
-		left: 10px;
-		max-width: 100%;
-		text-align: center;
-		z-index: 100;
-		cursor: pointer;
-	}
-	.site-navigation {
-		width: 100%;
-		border-top: 1px solid @gray-light;
+	position: fixed;
+	z-index: @zindex-navbar;
+	width: 100%;
+	padding: 1em 10px 0;
+	background: @brand-primary;
+	transition: all .25s;
 
+	.site-logo {
+		display: block;
+		margin: 0 auto 1em;
+		height: 3em;
+		width: 3em;
+		path {
+			fill: white;
+			transition: all .25s;
+		}
+	}
+	.site-title {
+		margin: 0;
+		font-size: @font-size-base;
+		a { color: white; text-decoration: none; }
+	}
+	.site-tagline {
+		margin-top: 1em;
+		font-size: @font-size-small;
 	}
 	.search-form {
 		.search-field {
@@ -25,16 +36,39 @@
 		}
 	}
 }
+body.min {
+	.site-header {
+		background: white;
+		border-bottom: 1px solid @gray-lighter;
+		.site-logo {
+			height: 2em;
+			width: 2em;
+			path { fill: @gray-light; }
+		}
+		.site-title a {
+			color: @gray-light;
+			font-size: @font-size-small;
+			line-height: 3em;
+		}
+		.site-tagline { display: none; }
+	}
+}
 
 .site-footer {
-	padding: 1em 0;
+	padding-top: 1em;
 	color: @gray-light;
 	border-top: 1px solid @gray-lighter;
 	.static-menu {
+		margin-bottom: 1em;
 		font-family: @font-family-sans-serif;
 	}
 	.site-copyright {
 		color: @gray;
 		font-family: @font-family-sans-serif;
+	}
+}
+@media screen and (min-width: @screen-xs) {
+	.site-header {
+		// padding: 2em 10px;
 	}
 }

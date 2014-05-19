@@ -32,3 +32,21 @@ class Layout_Engine {
 	}
 }
 add_filter('template_include', array('Layout_Engine', 'wrap'), 99);
+
+/**
+ *	Nest templates for category children
+ */
+
+function nest_category_template($orig_template) {
+	global $wp_query;
+	if (!is_category()) { return $orig_template; }
+
+	$cat = $wp_query->get_queried_object();
+	while ($cat && !is_wp_error($cat)) {
+		$template = TEMPLATEPATH . "/category-{$cat->slug}.php";
+		if (file_exists($template)) { return $template; }
+		$cat = $cat->parent ? get_category($cat->parent) : false;
+	}
+	return $orig_template;
+}
+add_filter('template_include', 'nest_category_template', 98);

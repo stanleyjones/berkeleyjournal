@@ -3,11 +3,15 @@
 
 	.post-thumbnail {
 		width: 100%;
-		height: auto;
-		background: #eee;
+		height: 16em;
+		width: auto;
+		overflow: hidden;
+		background: transparent center no-repeat;
+		background-size: cover;
+		img { display: none; }
 	}
 	.post-title {
-		margin-top: 0;
+		// margin-top: 0;
 	}
 	.post-meta, .single-byline, .post-stats {
 		color: @gray-light;

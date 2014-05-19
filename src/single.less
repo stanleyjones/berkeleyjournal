@@ -1,14 +1,7 @@
 #single { // Matches body#single
-	.site-header {
-		.site-title, .site-tagline { display: none; }
-		.site-logo {
-			// position: fixed;
-			max-width: 3em;
-			// background: rgba(255,255,255,0.25);
-			// border-radius: 50%;
-		}
-	}
+	.site-logo { cursor: pointer; }
 	.post {
+		padding-top: 5em;
 		.single-byline {
 			margin: 1em 0;
 		}
@@ -18,19 +11,24 @@
 		.single-banner {
 			margin: .5em auto 1em;
 			height: 0;
-			padding-bottom: 56.25%;
-			// min-height: 24em;
+			padding-bottom: 56.25%; // 16:9
 			background: @gray-lighter center no-repeat;
 			background-size: contain;
 		}
 		.single-content {
 			padding-bottom: 5em;
 			line-height: 1.5;
+			max-width: 33em;
 
-			blockquote {
-				.make-md-column-offset(-3);
+			blockquote, blockquote.left {
+				.make-md-column-offset(-5);
 				.make-md-column(8);
 			}
+			blockquote.right {
+				.make-md-column-offset(5);
+			}
 		}
+
+
 	}
 }
