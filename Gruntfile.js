@@ -31,7 +31,7 @@ module.exports = function(grunt) {
 					cleancss: true
 				},
 				files: {
-					'dist/main.css': [
+					'src/main.css': [
 						'src/lib/inlineDisqussions.css',
 						'src/main.less'
 					]
@@ -45,9 +45,16 @@ module.exports = function(grunt) {
 			},
 			styles: {
 				files: 'src/*.less',
-				tasks: ['less']
+				tasks: ['less', 'autoprefixer']
 			}
-		}
+		},
+		autoprefixer: {
+            dist: {
+                files: {
+                    'dist/main.css': 'src/main.css'
+                }
+            }
+        },
 
 	});
 
@@ -55,6 +62,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-autoprefixer');
 
-	grunt.registerTask('default',['jshint','uglify','less']);
+	grunt.registerTask('default',['jshint','uglify','less','autoprefixer']);
 };

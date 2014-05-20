@@ -18,7 +18,7 @@
 		$('body').toggleClass('min', $(document).scrollTop() > 100);
 	});
 	$(window).resize(function () {
-		$('#wrap').css({ paddingTop: $('.site-header').outerHeight() });
+		$('#wrap, #sidebar').css({ paddingTop: $('.site-header').outerHeight() });
 	});
 	$(window).resize();
 

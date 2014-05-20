@@ -2,13 +2,13 @@
 	position: fixed;
 	z-index: @zindex-navbar;
 	width: 100%;
-	padding: 1em 10px 0;
+	padding: 1em 10px;
 	background: @brand-primary;
 	transition: all .25s;
 
 	.site-logo {
 		display: block;
-		margin: 0 auto 1em;
+		margin: 0 auto 0;
 		height: 3em;
 		width: 3em;
 		path {
@@ -45,10 +45,12 @@ body.min {
 			width: 2em;
 			path { fill: @gray-light; }
 		}
-		.site-title a {
-			color: @gray-light;
+		.site-title {
 			font-size: @font-size-small;
 			line-height: 3em;
+			a {
+				color: @gray-light;
+			}
 		}
 		.site-tagline { display: none; }
 	}
@@ -69,6 +71,19 @@ body.min {
 }
 @media screen and (min-width: @screen-xs) {
 	.site-header {
-		// padding: 2em 10px;
+		.site-title {
+			font-size: @font-size-large;
+		}
+		padding: 2em 10px;
+	}
+	body.min .site-header {
+		padding: 1em 10px;
+	}
+}
+@media screen and (min-width: @screen-md) {
+	.site-header {
+		.site-title {
+			font-size: @font-size-large * 2;
+		}
 	}
 }
