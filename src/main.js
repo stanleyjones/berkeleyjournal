@@ -9,13 +9,10 @@
 			var svg = jQuery(data).find('svg');
 			svg.attr({'id': img.attr('id'), 'class': img.attr('class')});
 			img.replaceWith(svg);
-			svg.filter('.site-logo')
-				.mouseenter(function () { $('#sidebar').addClass('on-canvas'); })
-				.click(function () { $('#sidebar').toggleClass('on-canvas'); });
 		}, 'xml');
 	});
 	$(window).scroll(function () {
-		$('body').toggleClass('min', $(document).scrollTop() > 100);
+		$('body#front-page').toggleClass('min', $(document).scrollTop() > 100);
 	});
 	$(window).resize(function () {
 		$('#wrap, #sidebar').css({ paddingTop: $('.site-header').outerHeight() });
@@ -45,17 +42,16 @@
 		return 'url("' + $(this).data('src') + '")';
 	});
 
-	var disqus_shortname = 'stanleygjones';
-	$('.single-content p').inlineDisqussions();
-
-	function toggleSidebar() {
-		$('#sidebar').toggleClass('on-canvas');
-	}
+	// var disqus_shortname = 'stanleygjones';
+	// $('.single-content p').inlineDisqussions({
+	// 	identifier: 'berkeley-journal',
+	// 	maxWidth: 320
+	// });
 
 	// Archive Pages
 
-	if ($('.category-forum').length) { $('#wrap').addClass('forum'); }
+	if ($('#category-forum').length) { $('#wrap').addClass('forum'); }
 	if ($('.category-blog').length) { $('#wrap').addClass('blog'); }
-	if ($('.page-template-default').length) { $('#wrap').addClass('magazine'); }
+	if ($('#page-template-default').length) { $('#wrap').addClass('magazine'); }
 
 }(jQuery));

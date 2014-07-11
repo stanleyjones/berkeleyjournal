@@ -1,7 +1,7 @@
 <section class="archive row">
 	<div class="col-md-3">
 <?php
-	if (is_author()) : 
+	if (is_author()) :
 		$author = get_userdata(get_query_var('author'));
 		get_template_part('tpl/tax-author');
 	elseif (is_category()) :

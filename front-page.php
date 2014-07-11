@@ -1,17 +1,20 @@
 <?php $page_id = get_the_ID(); ?>
-<div class="home-content tab-content container">
+<div class="home-content tab-content">
 	<div id="latest" class="tab-pane">
 		<section class="featured col-md-9">
 <?php
 	$featured = get_featured_posts();
 	foreach($featured as $post) { get_template_part('tpl/post', 'featured'); }
 ?>
+			<a class="btn btn-primary more-link" href="<?php echo get_category_link(get_cat_ID('articles')); ?>">More</a>
 		</section>
 		<section class="unfeatured col-md-3">
 <?php
 	$latest = get_latest_posts();
 	foreach($latest as $post) { get_template_part('tpl/post'); }
 ?>
+			<a class="btn btn-primary more-link" href="<?php echo get_category_link(get_cat_ID('articles')); ?>">More</a>
+
 		</section>
 	</div>
 	<div id="forum" class="tab-pane">
@@ -28,5 +31,8 @@
 	</div>
 	<div id="magazine" class="tab-pane">
 		<section><?php the_page_content('magazine'); ?></section>
+	</div>
+	<div id="search" class="tab-pane">
+		<?php get_search_form(); ?>
 	</div>
 </div>

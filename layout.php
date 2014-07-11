@@ -3,12 +3,12 @@
 
 <?php get_template_part('tpl/head'); ?>
 
-<body id="<?php main_template_base(); ?>" <?php body_class(); ?>>
+<body id="<?php main_template_base(); ?>" <?php body_class(is_single() ? 'min' : ''); ?>>
 
 <?php get_template_part('tpl/header'); ?>
 
 	<div id="wrap">
-		<div id="content" class="container">
+		<div id="content" class="<?php echo is_single() ? 'container-fluid' : 'container'; ?>">
 			<?php include main_template_path(); ?>
 		</div>
 	</div>

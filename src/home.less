@@ -10,7 +10,7 @@
 		z-index: @zindex-navbar;
 		text-align: center;
 		transition: all .25s;
-	
+
 		.menu-item {
 			display: inline-block;
 			float: none;
@@ -37,7 +37,7 @@
 		.tax-name { margin-top: 0; }
 		.featured {
 			padding-top: 2em;
-			border-bottom: 2px solid white;
+			border-bottom: 1px solid @gray-lighter;
 		}
 		.tab-pane > section {
 			padding-top: 2em;
@@ -56,13 +56,17 @@
 	a[title='forum']:before { content: '\f086'; }
 	a[title='blog']:before { content: '\f09e'; }
 	a[title='magazine']:before { content: '\f02d'; }
+	a[title='search']:before { content: '\f002'; }
 }
 
-#wrap { transition: background .25s; }
-#wrap.latest	{ background: fade(@brand-primary, 15%); }
+#wrap { transition: background .5s; }
+#wrap.latest	{ background: darken(white, 2%); }
 #wrap.forum 	{ background: fade(@brand-info, 25%); }
 #wrap.blog 		{ background: fade(@brand-success, 25%); }
 #wrap.magazine 	{ background: fade(@brand-warning, 25%); }
+#front-page #search {
+	padding: 2em 0 4em;
+}
 
 @media screen and (min-width: @screen-xs-min) {
 	#front-page {
@@ -93,7 +97,8 @@
 		.home-content {
 			.featured {
 				border-bottom: none;
-				border-right: 2px solid white;
+				padding-top: 5em;
+				border-right: 1px solid @gray-lighter;
 			}
 		}
 	}

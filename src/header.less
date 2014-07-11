@@ -2,27 +2,32 @@
 	position: fixed;
 	z-index: @zindex-navbar;
 	width: 100%;
-	padding: 1em 10px;
+	padding: 1em 0;
 	background: @brand-primary;
-	transition: all .25s;
+	border-bottom: 1px solid @gray-lighter;
+	transition: all .5s;
 
 	.site-logo {
 		display: block;
-		margin: 0 auto 0;
+		margin: 0;
 		height: 3em;
 		width: 3em;
+		transition: all .5s;
 		path {
 			fill: white;
-			transition: all .25s;
 		}
 	}
 	.site-title {
 		margin: 0;
 		font-size: @font-size-base;
+		font-family: 'Playfair Display', @font-family-serif;
+		font-weight: 700;
+		transition: all .5s;
 		a { color: white; text-decoration: none; }
 	}
 	.site-tagline {
-		margin-top: 1em;
+		margin-top: .5em;
+		color: lighten(@brand-primary, 25%);
 		font-size: @font-size-small;
 	}
 	.search-form {
@@ -39,7 +44,6 @@
 body.min {
 	.site-header {
 		background: white;
-		border-bottom: 1px solid @gray-lighter;
 		.site-logo {
 			height: 2em;
 			width: 2em;
@@ -74,10 +78,14 @@ body.min {
 		.site-title {
 			font-size: @font-size-large;
 		}
-		padding: 2em 10px;
+		.site-logo {
+			height: 4em;
+			width: 4em;
+		}
+		padding: 2em 0;
 	}
 	body.min .site-header {
-		padding: 1em 10px;
+		padding: 1em 0;
 	}
 }
 @media screen and (min-width: @screen-md) {

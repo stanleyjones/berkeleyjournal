@@ -1,7 +1,7 @@
 #single { // Matches body#single
 	.site-logo { cursor: pointer; }
 	.post {
-		padding-top: 5em;
+		padding-top: 1em;
 		.single-byline {
 			margin: 1em 0;
 		}
@@ -18,14 +18,22 @@
 		.single-content {
 			padding-bottom: 5em;
 			line-height: 1.5;
-			max-width: 33em;
+			max-width: 40em;
 
-			blockquote, blockquote.left {
-				.make-md-column-offset(-5);
+			p {
+
+			}
+			blockquote {
+				font-size: @font-size-base;
+				color: @gray;
+			}
+			.pullquote, .pullquote.left {
+				font-size: @font-size-large;
+				.make-md-column-offset(-3);
 				.make-md-column(8);
 			}
-			blockquote.right {
-				.make-md-column-offset(5);
+			.pullquote.right {
+				.make-md-column-offset(3);
 			}
 		}
 

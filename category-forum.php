@@ -15,12 +15,16 @@
 		<?php get_template_part('tpl/tax-forum'); ?>
 	</div>
 	<div class="col-md-9">
-		<?php
-			$tax_posts = get_posts(array('category' => $tax->term_id));
-			foreach ($tax_posts as $post) {
-		?>
-		<div class="col-md-4"><?php get_template_part('tpl/post'); ?></div>
-		<?php } ?>
+		<div class="row">
+<?php
+	$tax_posts = get_posts(array('category' => $tax->term_id));
+	foreach ($tax_posts as $post) {
+?>
+			<div class="col-md-4"><?php get_template_part('tpl/post'); ?></div>
+<?php
+	}
+?>
+		</div>
 	</div>
 </section>
 <?php endforeach; ?>
