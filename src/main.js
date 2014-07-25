@@ -42,12 +42,6 @@
 		return 'url("' + $(this).data('src') + '")';
 	});
 
-	// var disqus_shortname = 'stanleygjones';
-	// $('.single-content p').inlineDisqussions({
-	// 	identifier: 'berkeley-journal',
-	// 	maxWidth: 320
-	// });
-
 	// Archive Pages
 
 	if ($('#category-forum').length) { $('#wrap').addClass('forum'); }

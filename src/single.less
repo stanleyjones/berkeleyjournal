@@ -19,6 +19,7 @@
 			padding-bottom: 5em;
 			line-height: 1.5;
 			max-width: 40em;
+			transition: all 0.5s;
 
 			p {
 
@@ -36,7 +37,24 @@
 				.make-md-column-offset(3);
 			}
 		}
-
-
+		.comment-form {
+			background: white;
+			.action-link {
+				padding-top: 0;
+				font-family: @font-family-sans-serif;
+			}
+		}
+		.forum-navigation {
+			small {
+				font-family: @font-family-sans-serif;
+			}
+		}
+	}
+}
+@media screen and (min-width: @screen-md) {
+	#single {
+		.single-content.side-comments-open {
+			transform: translate(-90px, 0);
+		}
 	}
 }

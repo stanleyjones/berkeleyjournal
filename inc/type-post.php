@@ -66,3 +66,14 @@ function the_banner($size = 'large', $class = 'single-banner') {
 		echo sprintf('<div class="%1$s" data-src="%2$s"></div>', $class, $image);
 	}
 }
+
+function has_more() {
+	global $post;
+	return (strpos($post->post_content, '<!--more-->'));
+}
+
+function in_forum() {
+	if (has_category()) { $post_category = get_the_category(); }
+	$forum_category = get_category_by_slug('forum');
+	return ($post_category[0]->parent == $forum_category->term_id);
+}
