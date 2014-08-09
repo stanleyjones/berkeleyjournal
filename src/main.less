@@ -41,7 +41,7 @@
 @import 'variables'; // Override Bootstrap variables
 
 @import '../bower_components/font-awesome/less/font-awesome';
-@fa-font-path: '../fnt/';
+@fa-font-path: '../fonts/';
 
 @import 'header';
 @import 'home';
@@ -54,4 +54,9 @@
 @import 'fonts';
 
 body { position: relative; }
-// h1,h2,h3,h4 { letter-spacing: -1pt; }
+
+.btn {
+	font-family: @headings-font-family;
+	letter-spacing: 1pt;
+	padding-bottom: 0;
+}

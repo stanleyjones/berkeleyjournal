@@ -14,6 +14,9 @@ function theme_queue() {
 	wp_enqueue_style('main', get_stylesheet_directory_uri() . '/dist/main.css', array(), filemtime(get_stylesheet_directory() . '/dist/main.css'));
 	wp_enqueue_script('main', get_stylesheet_directory_uri() . '/dist/main.js', array('jquery'), filemtime(get_stylesheet_directory() . '/dist/main.js'), true);
 
+	// Add modernizr, also pre-compiled
+	wp_enqueue_script('modernizr', get_stylesheet_directory_uri() . '/dist/modernizr.js', array(), filemtime(get_stylesheet_directory() . '/dist/modernizr.js'), false);
+
 	// Create AJAX.url
 	wp_localize_script('main', 'AJAX', array( 'url' => admin_url( 'admin-ajax.php' )));
 

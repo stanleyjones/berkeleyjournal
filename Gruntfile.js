@@ -17,6 +17,7 @@ module.exports = function(grunt) {
 				},
 				files: {
 					'dist/jquery.js': ['bower_components/jquery/dist/jquery.js'],
+					'dist/modernizr.js': ['bower_components/modernizr/modernizr.js'],
 					'dist/main.js': [
 						'bower_components/bootstrap/dist/js/bootstrap.js',
 						'src/lib/inlineDisqussions.js',

@@ -13,8 +13,8 @@
 @gray-light:             lighten(#000, 60%);   // #999
 @gray-lighter:           lighten(#000, 93.5%); // #eee
 
-@brand-primary:         #639;
-@brand-secondary:       #0e7286;
+@brand-primary:         #025;
+@brand-secondary:       #fc2;
 @brand-success:         #5cb85c;
 @brand-info:            #5bc0de;
 @brand-warning:         #f0ad4e;
@@ -40,13 +40,13 @@
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-@font-family-sans-serif:  Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
-@font-family-serif:       Lora, Georgia, "Times New Roman", Times, serif;
+@font-family-sans-serif:  "Arvo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif:       "OstrichSans", Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
-@font-family-base:        @font-family-serif;
+@font-family-base:        @font-family-sans-serif;
 
-@font-size-base:          18px;
+@font-size-base:          16px;
 @font-size-large:         ceil((@font-size-base  * 1.25)); // ~22px
 @font-size-small:         ceil((@font-size-base  * 0.67)); // ~12px
 
@@ -63,7 +63,7 @@
 @line-height-computed:    ceil((@font-size-base * @line-height-base)); // ~30px
 
 //** By default, this inherits from the `<body>`.
-@headings-font-family:    'Playfair Display', @font-family-serif;
+@headings-font-family:    @font-family-serif;
 @headings-font-weight:    500;
 @headings-line-height:    1.1;
 @headings-color:          inherit;
@@ -142,9 +142,9 @@
 @btn-default-bg:                 #fff;
 @btn-default-border:             #ccc;
 
-@btn-primary-color:              #fff;
-@btn-primary-bg:                 @brand-primary;
-@btn-primary-border:             darken(@btn-primary-bg, 5%);
+@btn-primary-color:              @brand-primary; //#fff;
+@btn-primary-bg:                 #fff; //@brand-primary;
+@btn-primary-border:             @brand-primary; //darken(@btn-primary-bg, 5%);
 
 @btn-success-color:              #fff;
 @btn-success-bg:                 @brand-success;

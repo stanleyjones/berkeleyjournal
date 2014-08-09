@@ -7,6 +7,10 @@
 	border-bottom: 1px solid @gray-lighter;
 	transition: all .5s;
 
+	.site-logo-container {
+		float: left;
+		margin: 0 10px;
+	}
 	.site-logo {
 		display: block;
 		margin: 0;
@@ -17,18 +21,23 @@
 			fill: white;
 		}
 	}
+	.site-title-container {
+		margin-left: 5em;
+	}
 	.site-title {
 		margin: 0;
 		font-size: @font-size-base;
-		font-family: 'Playfair Display', @font-family-serif;
-		font-weight: 700;
+		font-family: "Chunkfive", @headings-font-family;
+		letter-spacing: 1pt;
 		transition: all .5s;
 		a { color: white; text-decoration: none; }
 	}
 	.site-tagline {
-		margin-top: .5em;
-		color: lighten(@brand-primary, 25%);
+		margin-top: 0;
+		color: @brand-secondary;
+		font-family: @headings-font-family;
 		font-size: @font-size-small;
+		letter-spacing: 1pt;
 	}
 	.search-form {
 		.search-field {
@@ -92,6 +101,9 @@ body.min {
 	.site-header {
 		.site-title {
 			font-size: @font-size-large * 2;
+		}
+		.site-tagline {
+			font-size: @font-size-base;
 		}
 	}
 }

@@ -16,13 +16,13 @@
 			float: none;
 			a {
 				padding: 0 10px;
-				color: fade(@brand-secondary, 50%);
+				color: fade(@brand-primary, 50%);
 				font-size: 0;
 				&:before { font-size: @font-size-base; }
 				&:hover { color: @brand-secondary; background: transparent; }
 			}
 			&.active a {
-				color: @brand-secondary !important;
+				color: @brand-primary !important;
 				background: transparent;
 			}
 		}
@@ -59,11 +59,6 @@
 	a[title='search']:before { content: '\f002'; }
 }
 
-#wrap { transition: background .5s; }
-#wrap.latest	{ background: darken(white, 2%); }
-#wrap.forum 	{ background: fade(@brand-info, 25%); }
-#wrap.blog 		{ background: fade(@brand-success, 25%); }
-#wrap.magazine 	{ background: fade(@brand-warning, 25%); }
 #front-page #search {
 	padding: 2em 0 4em;
 }

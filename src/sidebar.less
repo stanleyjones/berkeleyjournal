@@ -1,18 +1,11 @@
+
 #sidebar {
-	position: fixed;
+	position: absolute;
 	top: 0;
-	height: 100vh;
-	padding: 6em 0 2em;
-	overflow-y: scroll;
+	padding: 8em 0 2em;
 
 	color: @gray-dark;
 	background: darken(white, 2%);
-	opacity: 0.25;
-	transition: opacity 0.5s;
-
-	&:hover {
-		opacity: 1;
-	}
 
 	ul { padding-left: 0; }
 	li { list-style: none; }
@@ -54,4 +47,14 @@
 		font-family: @font-family-sans-serif;
 	}
 
+}
+html.no-touch #sidebar {
+	position: fixed;
+
+	height: 100vh;
+	overflow-y: scroll;
+
+	opacity: 0.25;
+	transition: opacity 0.5s;
+	&:hover { opacity: 1; }
 }

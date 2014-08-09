@@ -11,13 +11,23 @@
 			img.replaceWith(svg);
 		}, 'xml');
 	});
-	$(window).scroll(function () {
-		$('body#front-page').toggleClass('min', $(document).scrollTop() > 100);
-	});
-	$(window).resize(function () {
-		$('#wrap, #sidebar').css({ paddingTop: $('.site-header').outerHeight() });
-	});
+
+	var scrolled, resized;
+	$(window).scroll(function () { scrolled = true; });
+	$(window).resize(function () { resized = true; });
 	$(window).resize();
+
+	setInterval(function () {
+		if (scrolled) {
+			$('body#front-page').toggleClass('min', $(document).scrollTop() > 100);
+			scrolled = false;
+
+		}
+		if (resized) {
+			$('#wrap').css({ paddingTop: $('.site-header').outerHeight() });
+			resized = false;
+		}
+	}, 500);
 
 	// Home
 
