@@ -1,20 +1,27 @@
 // WordPress defaults
 
-.entry-content img { max-width: 100% }
+.entry-content img,
+.wp-caption img { max-width: 100% }
 .alignleft, img.alignleft { float: left; text-align: left; }
 .alignright, img.alignright { float: right; text-align: right; }
 .aligncenter, img.aligncenter { float: none; text-align: center; }
 .alignnone, img.alignnone { float: none; }
 
-.wp-caption {}
-.wp-caption img {}
-.wp-caption p.wp-caption-text {}
+.wp-caption {
+	margin-top: -1em;
+	font-size: @font-size-small;
+	color: @gray-light;
+	a {
+		color: @gray-light;
+		text-decoration: underline;
+	}
+}
 
 .wp-smiley {}
 
 blockquote.left {}
 blockquote.right {}
-		
+
 .gallery {
 	margin-bottom: 20px;
 }
@@ -135,7 +142,7 @@ blockquote.right {}
 .gallery-columns-9 .gallery-caption {
 	display: none;
 }
-		
+
 		.size-full {}
 		.size-large {}
 		.size-medium {}

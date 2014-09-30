@@ -2,7 +2,7 @@
 	<h3 class="author-name"><?php echo $author->display_name; ?></h3>
 	<p class="author-bio"><?php echo $author->description; ?></p>
 
-<?php $posts = get_author_posts(); if ($posts) : ?>
+<?php $posts = get_posts(array('author' => $author->ID)); if ($posts) : ?>
 	<ul>
 <?php foreach ($posts as $post) : setup_postdata($post); ?>
 		<li class="post-link"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br><span class="post-meta"><?php the_time('F j, Y'); ?> &bull; <?php the_category(' '); ?></span></li>

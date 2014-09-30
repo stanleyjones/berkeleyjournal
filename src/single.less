@@ -18,15 +18,22 @@
 			background: @gray-lighter center no-repeat;
 			background-size: contain;
 		}
+		.single-banner + .wp-caption {
+			text-align: right;
+		}
 		.single-content {
 			padding-bottom: 5em;
 			line-height: 1.5;
 			max-width: 40em;
 			transition: all 0.5s;
 
-			p {
-
+			figure {
+				margin: 1em 0;
 			}
+			figcaption {
+				margin: 1em 0 0;
+			}
+
 			blockquote {
 				font-size: @font-size-base;
 				color: @gray;
@@ -38,6 +45,21 @@
 			}
 			.pullquote.right {
 				.make-md-column-offset(3);
+			}
+		}
+		.side-comment {
+			.comments-wrapper {
+				width: 250px;
+			}
+			.right-of-avatar {
+				float: none;
+				width: 100%;
+			}
+			.comment-box {
+				float: right;
+				width: 82.75%;
+				background: #eee;
+				padding: 5px;
 			}
 		}
 		.comment-form {
@@ -54,10 +76,30 @@
 		}
 	}
 }
+@media screen and (min-width: 1400px) {
+	#single .post .side-comment .comments-wrapper {
+		width: 350px;
+	}
+}
+@media screen and (min-width: @screen-lg) {
+	#single .post .side-comment .comments-wrapper {
+		width: 300px;
+	}
+}
 @media screen and (min-width: @screen-md) {
 	#single {
 		.single-content.side-comments-open {
-			transform: translate(-90px, 0);
+			transform: translate(-150px, 0);
+		}
+	}
+}
+@media screen and (max-width: @screen-xs-max) {
+	#single {
+		.single-content.side-comments-open {
+			transform: translate(-250px, 0);
+		}
+		.single-content.side-comment {
+			float: none;
 		}
 	}
 }

@@ -31,7 +31,7 @@
 ?>
 	</div>
 	<div id="magazine" class="tab-pane">
-		<section><?php the_page_content('magazine'); ?></section>
+		<section><?php the_page_content('print'); ?></section>
 	</div>
 	<div id="search" class="tab-pane">
 		<?php get_search_form(); ?>

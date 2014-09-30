@@ -10,7 +10,7 @@ add_image_size('small', 320, 320, true);
 function get_featured_posts($args = array()) {
 	$args = array_merge($args, array(
 		'post__in' => get_option('sticky_posts'),
-		'category' => $args['category'] || get_option('default_category')
+		'category' => $args['category'] || '', //get_option('default_category')
 	));
 	return get_posts($args);
 }
@@ -30,6 +30,8 @@ function get_blog_posts($args = array()) {
 	return get_posts($args);
 }
 function get_author_posts($args = array()) {
+	global $author;
+	if (!isset($author)) { return false; }
 	$args = array_merge($args, array(
 		'author' => $author->ID
 	));
@@ -64,6 +66,15 @@ function the_thumbnail($size = 'small', $class = 'post-thumbnail') {
 function the_banner($size = 'large', $class = 'single-banner') {
 	if ($image = get_featured_image_src($size)) {
 		echo sprintf('<div class="%1$s" data-src="%2$s"></div>', $class, $image);
+	}
+}
+function has_thumbnail_caption() {
+	return get_post_field('post_excerpt', get_post_thumbnail_id($post->ID)) !== '';
+}
+function the_thumbnail_caption($args = array()) {
+	$featured_image_id = get_post_thumbnail_id($post->ID);
+	if ($featured_image_id && $caption = get_post_field('post_excerpt', $featured_image_id)) {
+		echo $caption;
 	}
 }
 
