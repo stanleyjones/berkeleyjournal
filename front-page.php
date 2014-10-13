@@ -10,7 +10,7 @@
 		</section>
 		<section class="unfeatured col-sm-3">
 <?php
-	$latest = get_latest_posts();
+	$latest = get_latest_posts(array('posts_per_page' => 4));
 	foreach($latest as $post) { get_template_part('tpl/post'); }
 ?>
 			<a class="btn btn-primary more-link" href="<?php echo get_category_link(get_cat_ID('articles')); ?>">More</a>

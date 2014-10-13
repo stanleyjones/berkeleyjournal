@@ -14,8 +14,11 @@
 ?>
 	</div>
 	<div class="col-md-9">
-		<?php while (have_posts()) : the_post(); ?>
+		<?php $ind = 0; $row = 3; $max = count($posts); while (have_posts()) : the_post(); ?>
+			<?php if ($ind % 3 == 0) : ?><div class="row"><?php endif; ?>
 			<div class="col-md-4"><?php get_template_part('tpl/post'); ?></div>
+			<?php if ($ind == $max - 1 || $ind % $row == ($row - 1)) : ?></div><?php endif; ?>
+			<?php $ind++; ?>
 		<?php endwhile; ?>
 	</div>
 </section>

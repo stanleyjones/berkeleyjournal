@@ -19,7 +19,7 @@
 
 	setInterval(function () {
 		if (scrolled) {
-			$('body#front-page').toggleClass('min', $(document).scrollTop() > 100);
+			$('body#front-page, body#page').toggleClass('min', $(document).scrollTop() > 100);
 			scrolled = false;
 
 		}

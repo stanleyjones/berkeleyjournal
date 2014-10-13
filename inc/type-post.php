@@ -39,19 +39,28 @@ function get_author_posts($args = array()) {
 }
 
 function get_byline() {
-	$byline = array(
-		get_the_time('F j, Y'),
-		sprintf(
-			'<a href="%1$s" rel="author">%2$s</a>',
-			get_author_posts_url(get_the_author_meta('ID')),
-			get_the_author()
-		)
-	);
+	$byline = array(get_the_time(get_option('date_format')));
+	if (function_exists('coauthors_posts_links')) {
+		$byline[] = coauthors_posts_links(null, null, null, null, false);
+	} else {
+		$byline[] = the_author_posts_link();
+	}
 	if (has_category()) { $byline[] = get_the_category_list(' '); }
 	if (has_tag()) { $byline[] = get_the_tag_list('', ' / '); }
 	return implode(' &bull; ', $byline);
 }
 function the_byline() { echo get_byline(); }
+
+function get_authors() {
+	if (function_exists('coauthors')) {
+		return coauthors(null, null, null, null, false);
+	} else {
+		return get_the_author();
+	}
+}
+function the_authors() {
+	echo get_authors();
+}
 
 function get_featured_image_src($size = 'thumbnail') {
 	if ($featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), $size)) {

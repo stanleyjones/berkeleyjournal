@@ -1,6 +1,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('row'); ?>>
 	<header class="col-sm-8 col-sm-offset-2 single-header">
 		<h1 class="single-title"><?php the_title(); ?></h1>
+		<h2 class="single-author"><?php the_authors(); ?></h2>
 		<?php if (has_excerpt()) : ?><p class="single-deck"><?php the_excerpt(); ?></p><?php endif; ?>
 		<div class="single-byline"><?php the_byline(); ?></div>
 	</header>
@@ -12,7 +13,7 @@
 		<?php else : ?>
 		<div class="single-content"><?php $more = 1; the_content(''); ?></div>
 		<?php endif; ?>
-		<php if (function_exists('credibility_footnotes_display')) { credibility_footnotes_display(); } ?>
+		<?php if (function_exists('credibility_footnotes_display')) { credibility_footnotes_display(); } ?>
 	</div>
 	<?php if(in_forum()) : ?>
 		<div class="forum-navigation col-sm-8 col-sm-offset-2">

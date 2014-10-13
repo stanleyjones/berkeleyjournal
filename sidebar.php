@@ -15,8 +15,11 @@
 		<hr>
 		<div class="sidebar-author">
 <?php
-	$author = get_user_by('id', $post_author_id);
-	include(locate_template('tpl/sidebar-author.php'));
+	if (function_exists('get_coauthors')) { $authors = get_coauthors($post_id); }
+	else { $authors = get_user_by('id', $post_author_id); }
+	foreach ($authors as $author) {
+		include(locate_template('tpl/sidebar-author.php'));
+	}
 ?>
 		</div>
 	</div>
