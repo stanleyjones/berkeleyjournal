@@ -4,7 +4,6 @@
 		<p><?php echo do_shortcode('[ssba]'); ?></p>
 
 		<div class="home-menu"><?php the_site_menu('home'); ?></div>
-		<div class="static-menu"><?php the_site_menu('footer'); ?></div>
 		<hr>
 		<div class="sidebar-category">
 <?php

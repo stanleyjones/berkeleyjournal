@@ -21,4 +21,7 @@
 			<?php $ind++; ?>
 		<?php endwhile; ?>
 	</div>
+	<div class="col-md-12 text-center">
+		<p><span class="btn btn-primary more-link"><?php next_posts_link('More'); ?></a></span></p>
+	</div>
 </section>

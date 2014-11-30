@@ -17,7 +17,7 @@
 	<div class="col-md-9">
 		<div class="row">
 <?php
-	$tax_posts = get_posts(array('category' => $tax->term_id));
+	$tax_posts = get_posts(array('category' => $tax->term_id, 'posts_per_page' => -1));
 	foreach ($tax_posts as $post) {
 ?>
 			<div class="col-md-4"><?php get_template_part('tpl/post'); ?></div>

@@ -19,9 +19,10 @@
 	</div>
 	<div id="forum" class="tab-pane">
 <?php
-	$tax = get_sticky_forum($page_id);
-	get_template_part('tpl/tax');
-	get_template_part('tpl/forums');
+	if ($tax = get_sticky_forum($page_id)) {
+		get_template_part('tpl/tax');
+	}
+		get_template_part('tpl/forums');
 ?>
 	</div>
 	<div id="blog" class="tab-pane">
