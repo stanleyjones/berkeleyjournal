@@ -1,11 +1,13 @@
 .site-header {
-	position: fixed;
+	position: relative;
 	z-index: @zindex-navbar;
 	width: 100%;
 	padding: 1em 0;
 	background: @brand-primary;
 	border-bottom: 1px solid @gray-lighter;
-	transition: all .5s;
+	margin: 110px 0 -110px;
+	top: -110px;
+	transition: top 1s;
 
 	.site-logo-container {
 		float: left;
@@ -16,7 +18,6 @@
 		margin: 0;
 		height: 3em;
 		width: 3em;
-		transition: all .5s;
 		path {
 			fill: white;
 		}
@@ -29,7 +30,6 @@
 		font-size: @font-size-base;
 		font-family: @headings-font-family;
 		letter-spacing: 0pt;
-		transition: all .5s;
 		a { color: white; text-decoration: none; }
 	}
 	.site-tagline {
@@ -52,6 +52,9 @@
 }
 body.min {
 	.site-header {
+		position: fixed;
+		margin: 0;
+		top: 0;
 		background: white;
 		.site-logo {
 			height: 2em;
@@ -65,7 +68,8 @@ body.min {
 				color: @gray-light;
 			}
 		}
-		.site-tagline { display: none; }
+		.site-tagline,
+		.home-menu { display: none; }
 	}
 }
 
@@ -106,4 +110,9 @@ body.min {
 			font-size: @font-size-base;
 		}
 	}
+}
+
+@keyframes slidedown {
+	from { top: -110px; }
+	to { top: 0; }
 }

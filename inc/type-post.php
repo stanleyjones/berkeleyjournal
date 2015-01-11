@@ -6,6 +6,7 @@
 
 add_theme_support('post-thumbnails');
 add_image_size('small', 320, 320, true);
+add_image_size('featured', 640, 360, true);
 
 function get_featured_posts($args = array()) {
 	$args = array_merge($args, array(
@@ -96,4 +97,12 @@ function in_forum() {
 	if (has_category()) { $post_category = get_the_category(); }
 	$forum_category = get_category_by_slug('forum');
 	return ($post_category[0]->parent == $forum_category->term_id);
+}
+
+function previous_forum_link() {
+	return get_permalink($post->ID);
+}
+
+function next_forum_link() {
+	return get_permalink($post->ID);
 }

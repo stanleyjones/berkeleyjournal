@@ -2,6 +2,9 @@
 	.site-header {
 		padding-bottom: 0;
 	}
+	&.min .site-header {
+		padding-bottom: 1em;
+	}
 	.home-menu {
 		margin: 1em -10px 0;
 		padding: 1em 0;
@@ -50,6 +53,7 @@
 		font-family: 'FontAwesome';
 		margin-right: .25em;
 	}
+	a:before { content: '\f15b'; }
 	a[title='latest']:before { content: '\f017'; }
 	a[title='hot']:before { content: '\f06d'; }
 	a[title='featured']:before { content: '\f005'; }
@@ -92,7 +96,6 @@
 		.home-content {
 			.featured {
 				border-bottom: none;
-				padding-top: 5em;
 				border-right: 1px solid @gray-lighter;
 			}
 		}

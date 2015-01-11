@@ -2,7 +2,7 @@
 <article class="post post-featured row">
 	<div class="col-sm-12"><h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2></div>
 	<?php if (has_post_thumbnail($post->ID)) : ?>
-	<div class="col-sm-12 col-md-5"><div class="post-thumbnail"><?php the_thumbnail('small', 'thumb'); ?></div></div>
+	<div class="col-sm-12 col-md-5"><div class="post-thumbnail"><?php the_thumbnail('featured', 'thumb'); ?></div></div>
 	<div class="col-sm-9 col-md-5"><?php else : ?>
 	<div class="col-sm-9 col-md-10">
 <?php endif; ?>
